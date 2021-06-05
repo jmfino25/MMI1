@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les gaulois</title>
+
+        <link rel="icon" href="favicon.ico" />
+
+        <!-- JQuery Avant Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>            
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Font-awesome -->            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+        <link rel="stylesheet" href="css/style.css">
+        
+	    <!-- VueJS -->
+	    <script src="https://cdn.jsdelivr.net/npm/vue"></script>	
+	    <!-- Vue-router pour injection des composants => routage & navigation -->
+	    <script src="https://unpkg.com/vue-router"></script>
+
+	    <!-- Lib Axios pour Ajax -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+      	<!-- Librairie momentJS -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js">
+	    </script>
+
+    </head>
+    <body>
+        <div class="container-fluid" id="app">
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <span class="navbar-brand">
+                        <router-link 
+                            class="nav-link" 
+                            style="color:white;                        
+                            " to="/">
+                            Les Gaulois
+                        </router-link>
+                    </span>
+
+                    <button class="navbar-toggler" 
+                      type="button" data-toggle="collapse" 
+                      data-target="#navbarNav" 
+                      aria-controls="navbarNav" 
+                      aria-expanded="false" 
+                      aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                
+                        <ul class="navbar-nav">
+              
+                            <li class="nav-item">
+                                <router-link 
+                                    class="nav-link" 
+                                    :to="{name:'Villageois'}"
+                                >
+                                    Villageois
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link 
+                                    class="nav-link" 
+                                    :to="{name:'Batailles'}"
+                                >
+                                Batailles
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link 
+                                    class="nav-link" 
+                                    :to="{name:'Potions'}"
+                                >
+                                Potions
+                                </router-link>                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="pages/lieux.html">Lieux</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="pages/geoloc.html">Géoloc.</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " 
+                               href="#" 
+                               id="navbarDropdown" 
+                               role="button" 
+                               data-toggle="dropdown" 
+                               aria-haspopup="true" 
+                               aria-expanded="false">
+                              Autres
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                              <a class="dropdown-item" href="pages/casques.html">Casques</a>
+                              <a class="dropdown-item" href="pages/ingredients.html">Ingrédients</a>
+                              <a class="dropdown-item" href="pages/typesCasque.html">Types Casques</a>
+                              <a class="dropdown-item" href="pages/specialites.html">Spécialités</a>
+                            </div>
+                            </li>
+                        </ul>
+                 
+                       <button class="btn btn-primary ml-auto" 
+                        data-toggle="modal" data-target="#cnxModal">
+                           <i class="fa fa-power-off faMenu"></i>
+                       </button>   
+                   </div>
+                </nav>
+            </div>
+
+            <!-- point insertion des composants-->
+            <router-view></router-view>
+            <!-- Modal -->
+            <div 
+                class="modal fade" 
+                id="cnxModal" 
+                tabindex="-1" 
+                role="dialog" 
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Connexion à l'application</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                
+                            <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Login</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Login">
+                            </div>
+
+                            <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Mot de passe</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Mot de passe">
+                            </div>
+                
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Deconnexion</button>
+                            <button type="button" class="btn btn-primary">Connexion</button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div> 
+
+        <!-- Paramètres de l'application -->
+        <script src="param/param.js"></script>
+
+        <!-- les composants utilisés -->
+        <script src="pages/accueil.vue.js"></script>
+
+        <script src="pages/villageois.vue.js"></script>
+        <script src="pages/villageois/create.vue.js"></script>
+
+        <script src="pages/batailles.vue.js"></script>
+        <script src="pages/bataille/create.vue.js"></script>
+
+        <script src="pages/potions.vue.js"></script>
+        <script src="pages/potion/create.vue.js"></script>
+
+        <script>
+            // Les routages / navigation de l'application
+            var routes = [
+                {path: '/',				        name:"Accueil",		                    component:Accueil},
+
+                {path: '/villageois',	        name:"Villageois",	                    component:Villageois},
+                {path: '/createVillageois',	    name:"CreateVillageois",	            component:CreateVillageois},
+
+                {path: '/batailles',	        name:"Batailles",	                    component:Batailles},
+                {path: '/createBataille',	    name:"CreateBataille",	                component:CreateBataille},
+
+                {path: '/potions',	            name:"Potions",	                        component:Potions},
+                {path: '/createPotion',	        name:"CreatePotion",	                component:CreatePotion},
+            ]
+    
+            // Initialisation du router
+            var router = new VueRouter(
+                {routes: routes}
+            )
+            // La vue de l'application (id="app")
+            var app = new Vue({
+                el:"#app",
+                router:router
+            })
+        </script>
+    </body>
+</html>

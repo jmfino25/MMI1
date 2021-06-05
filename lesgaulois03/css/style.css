@@ -1,0 +1,139 @@
+
+
+.imageSmall{
+    height:110px!important;
+    width:auto!important;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.cardGaulois{
+    width:150px;
+}
+
+.cardGlobale{
+    display:flex;
+    flex-flow: row wrap;
+    text-align:center;
+    justify-content: space-around;
+}
+
+/*
+*, ::after, ::before {
+  box-sizing: inherit!important;
+}
+*/
+.paveFct{
+    padding:.35rem!important;
+    width:100%;
+}
+
+.fa-lg{
+    font-size:1em!important;
+}
+
+.faMenu{
+    font-size:1.33em!important;
+}
+
+.faPave{
+    font-size:.75em!important;
+    color:white;
+    margin:.25rem;
+}
+
+.titre{
+    font-size:1rem!important;
+}
+.texte{
+    font-size:.75rem!important;    
+}
+
+.avatar {
+  vertical-align: middle;
+  width: auto;
+  height: 100px;
+  border-radius: 50%;
+  border:2px solid lightgray; 
+}
+
+/*
+ul li{
+    list-style-type: none;
+}
+
+
+.bordure {border:1px solid black; background-color:#F9F9F9; text-align:center; height:150px;}
+.centree{text-align: center;}
+.titre{text-align: center;}
+.imageSmall{
+    margin:0 auto;
+    width:100px;
+}
+.imageUp{
+    margin-top:10px;
+    width:200px;
+}
+
+.hauteur{
+    height:100%;
+
+    padding:5px;
+
+}
+.libelle{
+    text-align:left;
+    font-weight: bold;
+}
+.listeCase{
+    margin-right:10px;
+}
+.centree{
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:auto;
+}
+.specialite{    
+}
+.potion{
+    cursor:pointer;
+}
+.bataille{
+    cursor:pointer;
+}
+.lieu{
+    cursor:pointer;    
+}
+.invisible{
+    display:none;
+}
+.pagination{
+    
+}
+.fa{
+    cursor:pointer;
+}
+
+.bas{
+    position:absolute;
+    bottom:0;
+}
+
+
+.ui-widget select{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    
+}
+
+.ui-datepicker-month{
+    color:black;
+}
+.ui-datepicker-year{
+    color:black;
+}
+*/
