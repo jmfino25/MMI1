@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Front-End villageois</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <style>
+            .imageSmall{
+                height:100px;
+            }
+            .modele{
+               float:left; 
+               margin:5px;
+               padding:5px;
+               text-align:center;
+               box-shadow:8px 8px 12px #aaa;
+            }
+        </style>
+        <!-- Appel Axios en CDN -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script>
+// tableau pour ecuperer la liste des villageois
+var liste = new Array();
+// Appel Ajax avec axios
+axios.get('https://jsongaulois.jmfino.fr/listeVillageois.php')
+// Recuperation des données
+.then(response => {
+    liste = response.data;
+console.log("Liste", liste);
+        // Memoriser les li 
+        var contenu = "";
+        for(var i=0;i<liste.length;i++){
+            // Récuperation balise li
+            var modele = document.querySelector('.modele').outerHTML;
+            // création d'un li pour caque villageois
+            var li = modele.replace('{{nom}}', liste[i].nom);
+            li = li.replace('{{image}}', liste[i].image);
+            /// Ajout au contenu
+            contenu += li;
+        }
+        // Mise à jour de la liste html
+        document.querySelector('#liste').innerHTML = contenu;
+
+
+})
+.cath(error =>{
+    console.log("erreur", error);
+})
+
+
+
+
+/*            
+ // Création d'un Ajax
+ var xhr = new XMLHttpRequest();
+ // Création de la requete
+xhr.open('get','https://jsongaulois.jmfino.fr/listeVillageois.php');
+// Envoi de la requete
+xhr.send();
+// Ecouteurs d'évenements
+xhr.addEventListener('readystatechange', function(){
+    if(xhr.readyState == XMLHttpRequest.DONE){
+        // Récupération des resultats de la requete dans un tableaux
+        var liste = JSON.parse(xhr.responseText);
+console.log("liste :", liste);        
+        
+
+        // Memoriser les li 
+        var contenu = "";
+        for(var i=0;i<liste.length;i++){
+            // Récuperation balise li
+            var modele = document.querySelector('.modele').outerHTML;
+            // création d'un li pour caque villageois
+            var li = modele.replace('{{nom}}', liste[i].nom);
+            li = li.replace('{{image}}', liste[i].image);
+            /// Ajout au contenu
+            contenu += li;
+        }
+        // Mise à jour de la liste html
+        document.querySelector('#liste').innerHTML = contenu;
+    }
+})
+*/
+        </script>
+    </head>
+    <body>
+        <div id="liste">
+            <div class="modele">
+                <div class="image">
+                    <img src="{{image}}" class="imageSmall" />
+                    <div>{{nom}}</div>
+                </div>
+            </div>            
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
