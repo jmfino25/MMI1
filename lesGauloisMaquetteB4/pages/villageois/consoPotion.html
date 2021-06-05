@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les gaulois</title>
+
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="../../js/script.js"></script>
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+        <!-- Font-awesome -->            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="../../index.html">Les Gaulois</a>
+
+                    <button class="navbar-toggler" 
+                      type="button" data-toggle="collapse" 
+                      data-target="#navbarNav" 
+                      aria-controls="navbarNav" 
+                      aria-expanded="false" 
+                      aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                
+                        <ul class="navbar-nav">
+              
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../pages/villageois.html">Villageois</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../../pages/batailles.html">Batailles</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../../pages/potions.html">Potions</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/lieux.html">Lieux</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/geoloc.html">Géoloc.</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  " 
+                               href="#" 
+                               id="navbarDropdown" 
+                               role="button" 
+                               data-toggle="dropdown" 
+                               aria-haspopup="true" 
+                               aria-expanded="false">
+                              Autres
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                              <a class="dropdown-item" href="../pages/casques.html">Casques</a>
+                              <a class="dropdown-item" href="../pages/ingredients.html">Ingrédients</a>
+                              <a class="dropdown-item" href="../pages/typesCasque.html">Types Casques</a>
+                              <a class="dropdown-item" href="../pages/specialites.html">Spécialités</a>
+                            </div>
+                            </li>
+                        </ul>
+
+                        
+                        <button class="btn btn-primary ml-auto" 
+                            data-toggle="modal" data-target="#cnxModal">
+                               <i class="fa fa-power-off faMenu"></i>
+                        </button>
+                        
+                    </div>
+              
+                </nav>
+
+
+                <div class="card">              
+                    
+                    <div class="card-header">
+                        <h6>Consommation de potions de : Astérix
+                        <span class="float-right">
+                          <img src="../../imagesgaulois/Asterix.png"
+                          class="avatar" alt="Astérix"
+                          />
+                        </span> </h6>
+                    </div>
+
+                    <div class="card-body">
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Nouvelle consommation</h6>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Potion</span>
+                                    </div>
+                                    <select class="form-control" id="selectPotion" required>
+                                        <option value="0" disabled selected>Sélectionner une potion</option>
+                                        <option value="7">Assouplissement</option>
+                                        <option value="10">Assouplissement II</option>
+                                        <option value="8">Force</option>
+                                        <option value="9">Intelligence</option>
+                                        <option value="6">Invisibilite</option>
+                                        <option value="20">Magique</option>
+                                        <option value="11">Potion I</option>
+                                        <option value="12">Potion II</option>
+                                        <option value="13">Potion III</option>
+                                        <option value="14">Potion IV</option>
+                                        <option value="19">Potion IX</option>
+                                        <option value="15">Potion V</option>
+                                        
+                                    </select>
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Date</span>
+                                    </div>
+                                     <input type="date" class="form-control" id="date" required value="0045-01-01" />
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Dose</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="dose" required >
+                                    <button 
+                                        type="button" 
+                                        class="input-group-btn btn btn-info" 
+                                        title="Créer la consommation" 
+                                        name="creer">
+                                            <i class="fa fa-save fa-lg" ></i>
+                                    </button> 
+                                </div>
+                            </div>
+                       </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Consommations actuelles</h6>
+                                
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Potion</span>
+                                    </div>
+                                    <select class="form-control" id="selectPotion" disabled>
+                                        <option value="0" disabled selected>Assouplissement</option>
+                                    </select>
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Date</span>
+                                    </div>
+                                     <input type="date" class="form-control" required value="0048-07-01" />
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Dose</span>
+                                    </div>
+                                    <input type="number" class="form-control" required value="36">
+                                   <button 
+                                        type="button" 
+                                        class="input-group-btn btn btn-info" 
+                                        title="Mettre à jour la consommation" 
+                                        name="modifier">
+                                            <i class="fa fa-save fa-lg" ></i>
+                                    </button> 
+                                    <button 
+                                        type="button" 
+                                        class="input-group-btn btn btn-info" 
+                                        title="Supprimer la consommation" 
+                                        name="supprimer">
+                                        <i class="fa fa-trash fa-lg" ></i>
+                                    </button>
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Potion</span>
+                                    </div>
+                                    <select class="form-control" id="selectPotion" disabled>
+                                        <option value="0" disabled selected>Assouplissement</option>
+                                    </select>
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Date</span>
+                                    </div>
+                                     <input type="date" class="form-control" required value="0048-07-04" />
+
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Dose</span>
+                                    </div>
+                                    <input type="number" class="form-control" required value="19">
+                                   <button 
+                                        type="button" 
+                                        class="input-group-btn btn btn-info" 
+                                        title="Mettre à jour la consommation" 
+                                        name="modifier">
+                                            <i class="fa fa-save fa-lg" ></i>
+                                    </button> 
+                                    <button 
+                                        type="button" 
+                                        class="input-group-btn btn btn-info" 
+                                        title="Supprimer la consommation" 
+                                        name="supprimer">
+                                        <i class="fa fa-trash fa-lg" ></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                       </div>
+
+
+
+
+                    </div>
+
+                    <div class="card-footer">
+                    </div>
+                
+                </div>
+
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="fenetre-modale" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form name="connecter" action="index.php" method="post">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Connexion</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>Se connecter</strong>
+                                </div>
+                                <div class="panel-body">    
+
+
+                                    <div class="input-group"> 
+                                        <span class="input-group-addon">
+                                            <label for="logincnx">Nom : </label>
+                                        </span>
+                                        <input type="text" class="form-control" 
+                                               name="logincnx" 
+                                               id="logincnx" 
+                                               placeholder="Nom du villageois"
+                                               value="Abraracourcix"
+                                               > 
+                                    </div>
+
+
+                                </div>	
+
+                                <div class="panel-footer">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary pull-left" name="decnx"> 
+                                Se deconnecter
+                            </button>
+                            <button type="submit" class="btn btn-primary pull-right" name="cnx"> 
+                                Se connecter
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>	

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les gaulois</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js"></script>
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+        <!-- Font-awesome -->            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        
+
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="../index.html">Les Gaulois</a>
+
+                    <button class="navbar-toggler" 
+                      type="button" data-toggle="collapse" 
+                      data-target="#navbarNav" 
+                      aria-controls="navbarNav" 
+                      aria-expanded="false" 
+                      aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                
+                        <ul class="navbar-nav">
+              
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/villageois.html">Villageois</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/batailles.html">Batailles</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/potions.html">Potions</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/lieux.html">Lieux</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../pages/geoloc.html">Géoloc.</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  " 
+                               href="#" 
+                               id="navbarDropdown" 
+                               role="button" 
+                               data-toggle="dropdown" 
+                               aria-haspopup="true" 
+                               aria-expanded="false">
+                              Autres
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                              <a class="dropdown-item" href="../pages/casques.html">Casques</a>
+                              <a class="dropdown-item" href="../pages/ingredients.html">Ingrédients</a>
+                              <a class="dropdown-item" href="../pages/typesCasque.html">Types Casques</a>
+                              <a class="dropdown-item" href="../pages/specialites.html">Spécialités</a>
+                            </div>
+                            </li>
+                        </ul>
+                       <button class="btn btn-primary ml-auto" 
+                        data-toggle="modal" data-target="#cnxModal">
+                           <i class="fa fa-power-off faMenu"></i>
+                       </button>
+                    </div>
+              
+                </nav>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>
+                        Les types de casque
+                        <span class="float-right"
+                          title="Création d'un type de casque">
+                        <a                             
+                                                      
+                           href="../pages/TypeCasque/newTypeCasque.html" >
+                            <i class="fa fa-plus fa-lg"></i>
+                        </a>
+                        </span>
+                    </h5>
+                    
+                </div>
+
+                <div class="card-body table-responsive">
+                    <table class="table ">
+                      <thead class="thead-light">
+                        <tr>                      
+                          <th scope="col">Nom</th>
+                          <th scope="col">Nb Casques</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>Autre</td>
+                          <td>8</td>
+                          <td>
+                            <span 
+                              title="Supprimer le type de casque"
+                            >
+                                <a href="../pages/typeCasque/suppTypeCasque.html">
+                                    <i class="fa fa-times fa-lg" ></i>
+                                </a>
+                            </span>
+                            <span  
+                              title="Modifier le type de casque"
+                            >
+                                <a href="../pages/typeCasque/modifTypeCasque.html" >
+                                    <i class="fa fa-edit fa-lg" ></i>
+                                </a>
+                            </span>    
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Grec</td>
+                          <td>2</td>
+                          <td>
+                            <span 
+                              title="Supprimer le type de casque"
+                            >
+                                <a href="../pages/typeCasque/suppTypeCasque.html">
+                                    <i class="fa fa-times fa-lg" ></i>
+                                </a>
+                            </span>
+                            <span  
+                              title="Modifier le type de casque"
+                            >
+                                <a href="../pages/typeCasque/modifTypeCasque.html" >
+                                    <i class="fa fa-edit fa-lg" ></i>
+                                </a>
+                            </span>    
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Romain</td>
+                          <td>10</td>
+                          <td>
+                            <span 
+                              title="Supprimer le type de casque"
+                            >
+                                <a href="../pages/typeCasque/suppTypeCasque.html">
+                                    <i class="fa fa-times fa-lg" ></i>
+                                </a>
+                            </span>
+                            <span  
+                              title="Modifier le type de casque"
+                            >
+                                <a href="../pages/typeCasque/modifTypeCasque.html" >
+                                    <i class="fa fa-edit fa-lg" ></i>
+                                </a>
+                            </span>    
+                          </td>
+                        </tr>
+                     
+
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

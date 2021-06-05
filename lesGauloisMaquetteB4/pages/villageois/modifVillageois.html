@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les gaulois</title>
+
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+        <!-- Font-awesome -->            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="../../js/script.js"></script>
+       
+
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="../../index.html">Les Gaulois</a>
+
+                    <button class="navbar-toggler" 
+                      type="button" data-toggle="collapse" 
+                      data-target="#navbarNav" 
+                      aria-controls="navbarNav" 
+                      aria-expanded="false" 
+                      aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                
+                        <ul class="navbar-nav">
+              
+                            <li class="nav-item">
+                                <a class="nav-link" href="../villageois.html">Villageois</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../batailles.html">Batailles</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../potions.html">Potions</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../lieux.html">Lieux</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="../geoloc.html">Géoloc.</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  " 
+                               href="#" 
+                               id="navbarDropdown" 
+                               role="button" 
+                               data-toggle="dropdown" 
+                               aria-haspopup="true" 
+                               aria-expanded="false">
+                              Autres
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                              <a class="dropdown-item" href="../casques.html">Casques</a>
+                              <a class="dropdown-item" href="../ingredients.html">Ingrédients</a>
+                              <a class="dropdown-item" href="../typesCasque.html">Types Casques</a>
+                              <a class="dropdown-item" href="../specialites.html">Spécialités</a>
+                            </div>
+                            </li>
+                        </ul>
+                       <button class="btn btn-primary ml-auto" 
+                        data-toggle="modal" data-target="#cnxModal">
+                           <i class="fa fa-power-off faMenu"></i>
+                       </button>
+                        
+                    </div>
+              
+                </nav>
+            </div>
+
+            <div class="card">
+                <form>
+                <div class="card-header">
+                    <h6>Modification d'un villageois</h6>                    
+                </div>
+                
+                <div class="card-body table-responsive">
+               
+                    <div class="form-group">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="../../imagesGaulois/Asterix.png" 
+                                        id="previewImage" 
+                                        class="img-responsive" 
+                                        alt="image du villageois"
+                                        style="width:50%;border:1px solid lightgray;margin:10px;"
+                                    />
+                                    <div class="custom-file">
+                                    <input 
+                                        type="file" 
+                                        class="custom-file-input" 
+                                        id="validatedCustomFile" required
+                                        
+                                        >
+                                    <label 
+                                        class="custom-file-label" 
+                                        for="validatedCustomFile">Choisir une image...</label>
+                                        <div class="invalid-feedback">Image invalide</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-7">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Nom</span>
+                                        </div>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            placeholder="Nom du villageois" 
+                                            required 
+                                            value="Astérix"
+                                        />
+                                    </div>
+                                    <br/>
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Adresse</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Adresse du villageois" value="3° chène à droite de la carrière" required />
+                                    </div>
+                                    <br/>
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Lieu</span>
+                                        </div>
+                                        <select class="form-control"  required>
+                                           <option disabled selected>Selectionner un lieu</option> 
+                                           <option >Babaorum</option> 
+                                           <option >En mer</option>
+                                           <option >Laudanum</option>
+                                           <option selected>Village Gaulois</option>
+                                        </select>  
+                                    </div>
+                                    <br/>
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Spécialité</span>
+                                        </div>
+                                        <select class="form-control" required> 
+                                           <option disabled >Selectionner une spécialité</option>
+                                            <option >Artisan</option>
+                                            <option >Chef du villageois</option>
+                                            <option >Druide</option>
+                                            <option selected>Guerrier</option>
+                                        </select>  
+                                    </div>
+                                    <br/>
+                                     <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Latitude</span>
+                                        </div>
+                                        <input type="number" class="form-control" placeholder="Latitude du villageois" value="48.642165" required />
+                                    </div>
+                                    <br/>
+                                     <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Longitude</span>
+                                        </div>
+                                        <input type="number" class="form-control" placeholder="Longitude du villageois" value="-2.483616" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                   <div class="card-footer">
+                        <button type="button" 
+                            class="btn btn-default float-left" 
+                            id="cancel">
+                        Cancel</button>         
+                        <button type="submit" class="btn btn-primary float-right">Valider</button> 
+                    </div>
+                </form>
+            </div>
+
+        </div>  
+    </body>
+</html>
